@@ -4,8 +4,8 @@
 	<ui:with field="res" type="com.afrsoftware.schedulator.resources.Resources"></ui:with>
 	<ui:style>
 	</ui:style>
-	<g:HTMLPanel height="auto" styleName="{res.login.formSignin}">
-		<h1 class="{res.login.formSigninHeading}">Schedulator</h1>
+	<g:HTMLPanel height="auto" styleName="form-signin">
+		<h1 class="form-signin-heading">Schedulator</h1>
 		<p>Bienvenue sur le site de <b>Schedulator</b> connectez-vous ou creez un compte.</p> 		
 		<g:Label text="Nom d'utilisateur :" height="auto"/>
 		<g:TextBox ui:field="Username" height="auto"/>

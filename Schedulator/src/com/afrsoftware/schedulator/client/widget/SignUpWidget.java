@@ -1,4 +1,4 @@
-package com.afrsoftware.schedulator.client;
+package com.afrsoftware.schedulator.client.widget;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;

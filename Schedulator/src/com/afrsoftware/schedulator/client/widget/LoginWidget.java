@@ -1,4 +1,4 @@
-package com.afrsoftware.schedulator.client;
+package com.afrsoftware.schedulator.client.widget;
 
 import com.afrsoftware.schedulator.resources.Resources;
 import com.google.gwt.core.client.GWT;
@@ -10,6 +10,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -38,7 +39,6 @@ public class LoginWidget extends Composite {
 	Button lostPassword;
 
 	public LoginWidget() {
-		Resources.INSTANCE.login().ensureInjected();
 		initWidget(uiBinder.createAndBindUi(this));
 
 		signIn.addClickHandler(new ClickHandler() {
@@ -52,7 +52,8 @@ public class LoginWidget extends Composite {
 		createAccount.addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
-				Window.alert("NEW ACCOUNT!");
+				RootPanel.get().remove(0);
+				RootPanel.get().add(new SignUpWidget());
 			}
 		});
 		
