@@ -16,50 +16,51 @@ import com.google.gwt.user.client.ui.Widget;
 public class LoginWidget extends Composite {
 
 	private static LoginPanelUiBinder uiBinder = GWT
-            .create(LoginPanelUiBinder.class);
+			.create(LoginPanelUiBinder.class);
 
-    interface LoginPanelUiBinder extends UiBinder<Widget, LoginWidget> {
-    	
-    }
+	interface LoginPanelUiBinder extends UiBinder<Widget, LoginWidget> {
 
-    @UiField
-    TextBox Username;
+	}
 
-    @UiField
-    PasswordTextBox Password;
-    
-    @UiField
-    Button signIn;
-    
-    @UiField
-    Button createAccount;
+	@UiField
+	TextBox Username;
 
-    public LoginWidget() {  
-        Resources.INSTANCE.login().ensureInjected();
-        initWidget(uiBinder.createAndBindUi(this));
-        
-        signIn.addClickHandler(new ClickHandler() {
-			
+	@UiField
+	PasswordTextBox Password;
+
+	@UiField
+	Button signIn;
+
+	@UiField
+	Button createAccount;
+
+	public LoginWidget() {
+		Resources.INSTANCE.login().ensureInjected();
+		initWidget(uiBinder.createAndBindUi(this));
+
+		signIn.addClickHandler(new ClickHandler() {
+
 			public void onClick(ClickEvent event) {
-				Window.alert("SIGNED IN!");
+				Window.alert("SIGNED IN AS : " + getUsername() + " , "
+						+ getPassword());
 			}
 		});
-        
-        createAccount.addClickHandler(new ClickHandler() {
-			
+
+		createAccount.addClickHandler(new ClickHandler() {
+
 			public void onClick(ClickEvent event) {
-			
+
 				Window.alert("NEW ACCOUNT!");
 			}
 		});
-    }
+	}
 
-    public String getUsername() {
-        return Username.getText();
-    }
+	public String getUsername() {
+		return Username.getText();
+	}
 
-    public String getPassword() {
-        return Password.getText();
-    }
-    
+	public String getPassword() {
+		return Password.getText();
+	}
+
 }
