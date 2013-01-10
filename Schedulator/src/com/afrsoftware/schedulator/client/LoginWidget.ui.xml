@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with field="res" type="com.afrsoftware.schedulator.resources.Resources"></ui:with>
+	<ui:style>
+	</ui:style>
+	<g:FlowPanel height="auto" styleName="{res.login.formSignin}">
+		<g:HTML>
+			<h1 class="{res.login.formSigninHeading}">Schedulator</h1>
+			<p>Bienvenue sur le site de <b>Schedulator</b> connectez-vous ou creez un compte</p>
+		</g:HTML>
+
+		<g:Label text="Username:" height="auto"/>
+		<g:TextBox ui:field="Username" height="auto"/>
+		<g:Label text="Password:" height="auto" />
+		<g:PasswordTextBox ui:field="Password" height="auto" />
+		<g:Button ui:field="signIn" styleName="btn btn-large btn-primary" height="auto">Se connecter</g:Button>
+		<g:Button ui:field="createAccount" styleName="btn btn-large btn-inverse" height="auto">Créer un compte</g:Button>
+	</g:FlowPanel>
+</ui:UiBinder>
