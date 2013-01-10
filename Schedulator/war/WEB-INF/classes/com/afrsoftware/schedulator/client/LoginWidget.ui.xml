@@ -4,17 +4,15 @@
 	<ui:with field="res" type="com.afrsoftware.schedulator.resources.Resources"></ui:with>
 	<ui:style>
 	</ui:style>
-	<g:FlowPanel height="auto" styleName="{res.login.formSignin}">
-		<g:HTML>
-			<h1 class="{res.login.formSigninHeading}">Schedulator</h1>
-			<p>Bienvenue sur le site de <b>Schedulator</b> connectez-vous ou creez un compte</p>
-		</g:HTML>
-
-		<g:Label text="Username:" height="auto"/>
+	<g:HTMLPanel height="auto" styleName="{res.login.formSignin}">
+		<h1 class="{res.login.formSigninHeading}">Schedulator</h1>
+		<p>Bienvenue sur le site de <b>Schedulator</b> connectez-vous ou creez un compte.</p> 		
+		<g:Label text="Nom d'utilisateur :" height="auto"/>
 		<g:TextBox ui:field="Username" height="auto"/>
-		<g:Label text="Password:" height="auto" />
+		<g:Label text="Mot de passe :" height="auto" />
 		<g:PasswordTextBox ui:field="Password" height="auto" />
-		<g:Button ui:field="signIn" styleName="btn btn-large btn-primary" height="auto">Se connecter</g:Button>
-		<g:Button ui:field="createAccount" styleName="btn btn-large btn-inverse" height="auto">Créer un compte</g:Button>
-	</g:FlowPanel>
+		<g:Button ui:field="signIn" styleName="btn btn-primary" height="auto">Se connecter</g:Button>
+		<g:Button ui:field="createAccount" styleName="btn btn-inverse" height="auto">Créer un compte</g:Button>
+		<g:Button ui:field="lostPassword" styleName="btn btn-link" height="auto">Mot de passe oublié?</g:Button>
+	</g:HTMLPanel>
 </ui:UiBinder>

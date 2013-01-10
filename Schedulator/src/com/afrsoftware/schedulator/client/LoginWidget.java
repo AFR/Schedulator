@@ -33,6 +33,9 @@ public class LoginWidget extends Composite {
 
 	@UiField
 	Button createAccount;
+	
+	@UiField
+	Button lostPassword;
 
 	public LoginWidget() {
 		Resources.INSTANCE.login().ensureInjected();
@@ -49,8 +52,14 @@ public class LoginWidget extends Composite {
 		createAccount.addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
-
 				Window.alert("NEW ACCOUNT!");
+			}
+		});
+		
+		lostPassword.addClickHandler(new ClickHandler() {
+			
+			public void onClick(ClickEvent event) {
+				Window.alert("LOST PASSWORD :(");
 			}
 		});
 	}

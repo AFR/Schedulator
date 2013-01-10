@@ -11,5 +11,5 @@ public interface Login extends CssResource {
 
 	@ClassName("form-signin-heading")
 	String formSigninHeading();
-
+	
 }
