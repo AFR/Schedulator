@@ -1,14 +1,20 @@
-.floatLeft{
-	float: left !important;
-	margin-right : 4px;
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
 }
 
-.floatRight{
+.floatLeft {
+	float: left !important;
+	margin-right: 4px;
+}
+
+.floatRight {
 	float: right !important;
 }
 
-.signUpForm{
-	width : 375px;
+.signUpForm {
+	width: 375px;
 	padding: 19px 29px 29px;
 	margin: 0 auto 20px;
 	background-color: #fff;
@@ -45,4 +51,12 @@
 	margin-bottom: 15px;
 	padding: 7px 9px;
 	width: 90%;
+}
+
+.adminButton {
+	height: 255px;
+}
+
+.adminDescription {
+	height: 60px;
 }

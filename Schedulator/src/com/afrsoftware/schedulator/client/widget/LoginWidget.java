@@ -1,6 +1,5 @@
 package com.afrsoftware.schedulator.client.widget;
 
-import com.afrsoftware.schedulator.resources.Resources;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -46,6 +45,8 @@ public class LoginWidget extends Composite {
 			public void onClick(ClickEvent event) {
 				Window.alert("SIGNED IN AS : " + getUsername() + " , "
 						+ getPassword());
+				RootPanel.get().remove(0);
+				RootPanel.get().add(new AdminMenuWidget());
 			}
 		});
 

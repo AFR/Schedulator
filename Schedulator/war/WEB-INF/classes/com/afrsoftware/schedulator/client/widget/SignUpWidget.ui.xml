@@ -1,55 +1,119 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c="urn:import:com.afrsoftware.schedulator.client.widget">
 	<ui:with field="res"
 		type="com.afrsoftware.schedulator.resources.Resources"></ui:with>
 	<ui:style>
-		body {
-			background-color: #f5f5f5;
-		}
 	</ui:style>
+	<g:HTMLPanel>
+	<c:HeaderWidget/>
 	<g:HTMLPanel styleName="signUpForm">
 		<g:HTMLPanel styleName="row-fluid">
 			<h1>Créer un compte</h1>
 			<label>Nom :</label>
-			<g:TextBox ui:field="firstName" styleName="floatLeft span6">Prénom</g:TextBox>
-			<g:TextBox ui:field="lastName" styleName="floatLeft span6">Nom</g:TextBox>
+			<div ui:field="nameErrorGroup" class="control-group">
+				<label ui:field="nameErrorLabel" class="control-label" for="inputError">Les
+					champs nom et prénoms doivent être non vides.</label>
+				<div class="controls">
+					<g:TextBox ui:field="firstName" styleName="floatLeft span6">Prénom</g:TextBox>
+					<g:TextBox ui:field="lastName" styleName="floatLeft span6">Nom</g:TextBox>
+				</div>
+			</div>
 			<label>Courriel :</label>
-			<g:TextBox ui:field="email" styleName="span12"></g:TextBox>
+			<div ui:field="emailErrorGroup" class="control-group">
+				<label ui:field="emailErrorLabel" class="control-label" for="inputError">Le
+					champ courriel est obligatoire.</label>
+				<div class="controls">
+					<g:TextBox ui:field="email" styleName="span12"></g:TextBox>
+				</div>
+			</div>
 			<label>Mot de passe :</label>
-			<g:PasswordTextBox ui:field="password" styleName="span12" />
+			<div ui:field="passwordErrorGroup" class="control-group">
+				<label ui:field="passwordErrorLabel" class="control-label"
+					for="inputError">Vous devez choisir un mot de passe.</label>
+				<div class="controls">
+					<g:PasswordTextBox ui:field="password" styleName="span12" />
+				</div>
+			</div>
 			<label>Confirmez le mot de passe :</label>
-			<g:PasswordTextBox ui:field="confirmPassword"
-				styleName="span12" />
+			<div ui:field="confirmPasswordErrorGroup" class="control-group">
+				<label ui:field="confirmPasswordErrorLabel" class="control-label"
+					for="inputError">Les mots de passe ne correspondent pas. Voulez-vous réessayer ?</label>
+				<div class="controls">
+					<g:PasswordTextBox ui:field="confirmPassword"
+						styleName="span12" />
+				</div>
+			</div>
 			<label>Date de naissance :</label>
-			<g:TextBox ui:field="year" styleName="floatLeft span4">AAAA</g:TextBox>
-			<g:TextBox ui:field="month" styleName="floatLeft span4">MM</g:TextBox>
-			<g:TextBox ui:field="day" styleName="floatLeft span4">JJ</g:TextBox>
+			<div ui:field="birthDateErrorGroup" class="control-group">
+				<label ui:field="birthDateErrorLabel" class="control-label"
+					for="inputError">La date de naissance est incorrecte. Entrez une date de type
+					AAAA/MM/JJ.</label>
+				<div class="controls">
+					<g:TextBox ui:field="year" styleName="floatLeft span4">AAAA</g:TextBox>
+					<g:TextBox ui:field="month" styleName="floatLeft span4">MM</g:TextBox>
+					<g:TextBox ui:field="day" styleName="floatLeft span4">JJ</g:TextBox>
+				</div>
+			</div>
 			<label>Sexe :</label>
-			<g:ListBox ui:field="sex">
-				<g:item selected="true">
-					Je suis un/une ...
-				</g:item>
-				<g:item value='male'>
-					Homme
-				</g:item>
-				<g:item value='female'>
-					Femme
-				</g:item>
-			</g:ListBox>
+			<div ui:field="sexErrorGroup" class="control-group">
+				<label ui:field="sexErrorLabel" class="control-label" for="inputError">Veuillez
+					spécifier votre sexe.</label>
+				<div class="controls">
+					<g:ListBox ui:field="sex">
+						<g:item selected="true">
+							Je suis un/une ...
+						</g:item>
+						<g:item value='male'>
+							Homme
+						</g:item>
+						<g:item value='female'>
+							Femme
+						</g:item>
+					</g:ListBox>
+				</div>
+			</div>
 			<label>Adresse :</label>
-			<g:TextBox ui:field="address" styleName="span12"></g:TextBox>
+			<div ui:field="addressErrorGroup" class="control-group">
+				<label ui:field="addressErrorLabel" class="control-label" for="inputError">L'adresse
+					est obligatoire.</label>
+				<div class="controls">
+					<g:TextBox ui:field="address" styleName="span12"></g:TextBox>
+				</div>
+			</div>
 			<label>Ville :</label>
-			<g:TextBox ui:field="city" styleName="span12"></g:TextBox>
+			<div ui:field="cityErrorGroup" class="control-group">
+				<label ui:field="cityErrorLabel" class="control-label" for="inputError">La
+					ville
+					est obligatoire.</label>
+				<div class="controls">
+					<g:TextBox ui:field="city" styleName="span12"></g:TextBox>
+				</div>
+			</div>
 			<label>Code Postal :</label>
-			<g:TextBox ui:field="postalCode" styleName="span12"></g:TextBox>
+			<div ui:field="postalCodeErrorGroup" class="control-group">
+				<label ui:field="postalCodeErrorLabel" class="control-label"
+					for="inputError">Veuillez
+					entrer un code postal valide.</label>
+				<div class="controls">
+					<g:TextBox ui:field="postalCode" styleName="span12"></g:TextBox>
+				</div>
+			</div>
 			<label>Téléphone :</label>
-			<g:TextBox ui:field="phone" styleName="span12"></g:TextBox>
-			<!-- <label>Confirmez que vous n'êtes pas un robot :</label>
-			<g:TextBox ui:field="captcha" styleName="span12"></g:TextBox> -->
+			<div ui:field="phoneErrorGroup" class="control-group">
+				<label ui:field="phoneErrorLabel" class="control-label" for="inputError">Veuillez
+					entrer un numéro de téléphone valide.</label>
+				<div class="controls">
+					<g:TextBox ui:field="phone" styleName="span12"></g:TextBox>
+				</div>
+			</div>
+			<!-- <label>Confirmez que vous n'êtes pas un robot :</label> <g:TextBox 
+				ui:field="captcha" styleName="span12"></g:TextBox> -->
 			<label>INSERT CAPTCHA HERE</label>
 			<br />
 			<g:Button ui:field="submit" styleName="btn btn-primary">Soumettre</g:Button>
 		</g:HTMLPanel>
+	</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 
