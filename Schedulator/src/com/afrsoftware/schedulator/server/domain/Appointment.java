@@ -1,9 +1,13 @@
 package com.afrsoftware.schedulator.server.domain;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class Appointment {
 	
 	private Long appointmentNumber;
@@ -18,6 +22,7 @@ public class Appointment {
 	
 	public Appointment() {
 		super();
+		this.weekNumber = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
 	}
 	
 	public Appointment(Long appointmentNumber, String responsible, String title,
@@ -106,6 +111,5 @@ public class Appointment {
 	public void setSubscribers(List<String> subscribers) {
 		this.subscribers = subscribers;
 	}
-
 	
 }
