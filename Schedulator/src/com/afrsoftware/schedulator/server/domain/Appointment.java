@@ -8,6 +8,7 @@ public class Appointment {
 	
 	private Long appointmentNumber;
 	private String responsible;
+	private String title;
 	private String description;
 	private Date startTime;
 	private int duration;
@@ -19,12 +20,13 @@ public class Appointment {
 		super();
 	}
 	
-	public Appointment(Long appointmentNumber, String responsible,
+	public Appointment(Long appointmentNumber, String responsible, String title,
 			String description, Date startTime, int duration, int places,
 			int weekNumber, List<String> subscribers) {
 		super();
 		this.appointmentNumber = appointmentNumber;
 		this.responsible = responsible;
+		this.title = title;
 		this.description = description;
 		this.startTime = startTime;
 		this.duration = duration;
@@ -49,6 +51,14 @@ public class Appointment {
 		this.responsible = responsible;
 	}
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String getDescription() {
 		return description;
 	}
