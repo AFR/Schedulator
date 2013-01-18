@@ -21,7 +21,49 @@ public class JDOAppointmentRepositoryImpl implements AppointmentRepository {
 	
 	@Override
 	public Appointment findByAppointmentNumber(long appointmentNumber) {
-		return null;
+		PersistenceManager pm = getPersistenceManager();
+		Appointment appointment, detachedAppointment;
+		try {
+			appointment = pm.getObjectById(Appointment.class, appointmentNumber);
+			detachedAppointment = pm.detachCopy(appointment);
+		} finally {
+			pm.close();
+		}
+		return detachedAppointment;
+	}
+	
+	
+	@Override
+	public void delete(Appointment appointment) {
+		PersistenceManager pm = getPersistenceManager();
+		try {
+			
+				//TODO refund the deleted appointment. 
+				//this can also be managed in the domain, not the implementation of the repo
+				//since it's refunds are domain related.
+
+			pm.deletePersistent(appointment);
+		} finally {
+			pm.close();
+		}
+		
+	}
+	
+	@Override
+	public void delete(long appointmentNumber) {
+		PersistenceManager pm = getPersistenceManager();
+		Appointment appointment;
+		try {
+			appointment = pm.getObjectById(Appointment.class, appointmentNumber);
+			
+				//TODO refund the deleted appointment. 
+				//this can also be managed in the domain, not the implementation of the repo
+				//since it's refunds are domain related.
+
+			pm.deletePersistent(appointment);
+		} finally {
+			pm.close();
+		}
 	}
 	
 	private PersistenceManager getPersistenceManager() {
